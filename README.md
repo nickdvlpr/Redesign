@@ -2,7 +2,7 @@
 A new look for [Anki](https://apps.ankiweb.net/).
 
 
-<a title="Latest (pre-)release" href="https://github.com/glutanimate/speed-focus-mode/releases"><img src ="https://img.shields.io/github/release-pre/glutanimate/speed-focus-mode.svg?colorB=brightgreen"></a>
+<img src ="https://img.shields.io/badge/Version-5-blue">
 <a title="License: GNU AGPLv3" href="https://github.com/glutanimate/speed-focus-mode/blob/master/LICENSE"><img  src="https://img.shields.io/badge/license-GNU AGPLv3-green.svg"></a>
 <a title="Rate on AnkiWeb" href="https://ankiweb.net/shared/info/1046608507"><img src="https://glutanimate.com/logos/ankiweb-rate.svg"></a>
 <br>
