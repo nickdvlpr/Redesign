@@ -20,6 +20,7 @@ A new look for [Anki](https://apps.ankiweb.net/).
 ### License
 
 *Copyright © 2020 [Developer Nick](https://twitter.com/nickdvlpr)*
+
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
 
 <br>
