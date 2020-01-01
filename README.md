@@ -9,77 +9,21 @@ A new look for [Anki](https://apps.ankiweb.net/).
 
 ![](screenshots/decks.jpg)
 
-### Installation
 
-#### AnkiWeb <!-- omit in toc -->
-
-The easiest way to install Speed Focus Mode is through [AnkiWeb](https://ankiweb.net/shared/info/1046608507).
-
-#### Manual installation <!-- omit in toc -->
-
-Please click on the entry corresponding to your Anki version:
-
-<details>
-
-<summary><i>Anki 2.1</i></summary>
-
-1. Make sure you have the [latest version](https://apps.ankiweb.net/#download) of Anki 2.1 installed. Earlier releases (e.g. found in various Linux distros) do not support `.ankiaddon` packages.
-2. Download the latest `.ankiaddon` package from the [releases tab](https://github.com/glutanimate/speed-focus-mode/releases) (you might need to click on *Assets* below the description to reveal the download links)
-3. From Anki's main window, head to *Tools* → *Add-ons*
-4. Drag-and-drop the `.ankiaddon` package onto the add-ons list
-5. Restart Anki
-
-</details>
-
-<details>
-
-<summary><i>Anki 2.0</i></summary>
-
-1. Go to *Tools* → *Add-ons* → *Open add-ons folder*
-2. Find and delete the `Speed Focus Mode.py` file if it already exists.
-3. See if you can find a `speed_focus_mode` folder. If so:
-    1. If the folder contains a `meta.json` file, copy the file to a safe location. This will allow you to preserve your current settings.
-    2. Proceed to delete the `speed_focus_mode` folder
-4. Download and extract the latest Anki 2.0 add-on release from the [releases tab](https://github.com/glutanimate/speed-focus-mode/releases) (you might need to click on *Assets* below the description to reveal the download links)
-5. Move the extracted `Speed Focus Mode.py` and `speed_focus_mode` into the add-ons folder
-6. Optional: Place the `meta.json` file back into the directory if you created a copy beforehand.
-7. Restart Anki
-
-</details>
-
-### Documentation
-
-For further information on the use of this add-on please check out [the description text](docs/description.md) for AnkiWeb.
-
-### Building
-
-With [Anki add-on builder](https://github.com/glutanimate/anki-addon-builder/) installed:
-
-    git clone https://github.com/glutanimate/speed-focus-mode.git
-    cd speed-focus-mode
-    aab build
-
-For more information on the build process please refer to [`aab`'s documentation](https://github.com/glutanimate/anki-addon-builder/#usage).
 
 ### Contributing
 
-Contributions are welcome! Please review the [contribution guidelines](./CONTRIBUTING.md) on how to:
+(coming soon)
 
-- Report issues
-- File pull requests
-- Support the project as a non-developer
 
 ### License and Credits
 
-*Speed Focus Mode* is
 
-*Copyright © 2017-2019 [Aristotelis P.](https://glutanimate.com/) (Glutanimate)*
+*Copyright © 2020 [Developer Nick](https://twitter.com/nickdvlpr)*
 
-*Copyright © 2015-2016* unknown author of [Automatically show answer after X seconds](https://ankiweb.net/shared/info/648362761)
+Special thanks to the author of [Night Mode](https://ankiweb.net/shared/info/1496166067) and to those who supported its development on Patreon and elsewhere, especially [Basiskarten Jura](https://www.basiskarten.de/).
 
-Thanks a lot to Neri and Pablo for their support in commissioning this add-on and their fantastic new ideas!
-
-Speed Focus Mode is free and open-source software. The add-on code that runs within Anki is released under the GNU AGPLv3 license, extended by a number of additional terms. For more information please see the [LICENSE](https://github.com/glutanimate/speed-focus-mode/blob/master/LICENSE) file that accompanied this program.
+Redesign is released under the GNU AGPLv3 license, extended by a number of additional terms. For more information please see the [LICENSE](https://github.com/nickdvlpr/Redesign/blob/master/LICENSE) file that accompanied this program.
 
 This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY.
 
