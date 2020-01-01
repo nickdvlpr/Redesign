@@ -1,5 +1,5 @@
 # Redesign
-A new look for Anki.
+A new look for [Anki](https://apps.ankiweb.net/).
 
 
 <p align="center">
@@ -8,13 +8,10 @@ A new look for Anki.
 <a title="Rate on AnkiWeb" href="https://ankiweb.net/shared/info/1046608507"><img src="https://glutanimate.com/logos/ankiweb-rate.svg"></a>
 <br>
 <a title="Buy me a coffee :)" href="https://ko-fi.com/X8X0L4YV"><img src="https://img.shields.io/badge/ko--fi-contribute-%23579ebd.svg"></a>
-<a title="Support me on Patreon :D" href="https://www.patreon.com/bePatron?u=7522179"><img src="https://img.shields.io/badge/patreon-support-%23f96854.svg"></a>
-<a title="Follow me on Twitter" href="https://twitter.com/intent/user?screen_name=glutanimate"><img src="https://img.shields.io/twitter/follow/glutanimate.svg"></a>
+<a title="Support me on Patreon :D" href="https://www.patreon.com/developernick"><img src="https://img.shields.io/badge/patreon-support-%23f96854.svg"></a>
+<a title="Follow me on Twitter" href="https://twitter.com/nickdvlpr"><img src="https://img.shields.io/twitter/follow/glutanimate.svg"></a>
 </p>
 
-> Cut your review times into half
-
-Redesigns the spaced-repetition flashcard app [Anki](https://apps.ankiweb.net/).
 
 
 ### Table of Contents <!-- omit in toc -->
