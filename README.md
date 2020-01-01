@@ -2,9 +2,8 @@
 A new look for [Anki](https://apps.ankiweb.net/).
 
 
-<img src ="https://img.shields.io/badge/Version-5-blue">
-<a title="License: GNU AGPLv3" href="https://github.com/glutanimate/speed-focus-mode/blob/master/LICENSE"><img  src="https://img.shields.io/badge/license-GNU AGPLv3-green.svg"></a>
-<a title="Rate on AnkiWeb" href="https://ankiweb.net/shared/info/1046608507"><img src="https://glutanimate.com/logos/ankiweb-rate.svg"></a>
+<img src ="https://img.shields.io/badge/Version-5-blue"><a title="License: GNU AGPLv3" href="https://github.com/nickdvlpr/Redesign/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GNU%20AGPLv3-green"></a>
+<a title="Rate on AnkiWeb" href="https://ankiweb.net/shared/info/1914733489"><img src="https://img.shields.io/badge/Anki%20Add--on-Rate-blue"></a>
 <br>
 <a title="Support me on Patreon :)" href="https://www.patreon.com/developernick"><img src="https://img.shields.io/badge/patreon-support-%23f96854.svg"></a>
 <a title="Follow me on Twitter" href="https://twitter.com/nickdvlpr"></a>
