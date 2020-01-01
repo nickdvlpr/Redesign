@@ -9,13 +9,12 @@ A new look for [Anki](https://apps.ankiweb.net/).
 
 ![](screenshots/decks.jpg)
 
-
+<br>
 
 ### How to contribute
 
 (coming soon)
 
-<br>
 <br>
 
 ### License
