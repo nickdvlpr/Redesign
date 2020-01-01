@@ -4,12 +4,13 @@ A new look for [Anki](https://apps.ankiweb.net/).
 
 <img src ="https://img.shields.io/badge/Version-5-blue"> 
 <a title="Rate on AnkiWeb" href="https://ankiweb.net/shared/info/1914733489"><img src="https://img.shields.io/badge/Anki%20Add--on-Rate-blue"></a>
-<a title="License: GNU AGPLv3" href="https://github.com/nickdvlpr/Redesign/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GNU%20AGPLv3-green"></a>
-
-<br>
 
 <a title="Support me on Patreon :)" href="https://www.patreon.com/developernick"><img src="https://img.shields.io/badge/Patreon-Support-f96854"></a>
 <a title="Follow me on Twitter" href="https://twitter.com/nickdvlpr"><img src="https://img.shields.io/badge/Twitter-Follow-2aa9e0"></a>
+
+<br>
+
+<a title="License: GNU AGPLv3" href="https://github.com/nickdvlpr/Redesign/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GNU%20AGPLv3-green"></a>
 
 
 
