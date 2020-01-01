@@ -7,23 +7,7 @@ A new look for [Anki](https://apps.ankiweb.net/).
 <a title="License: GNU AGPLv3" href="https://github.com/nickdvlpr/Redesign/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GNU%20AGPLv3-green"></a>
 
 
-
-### Table of Contents <!-- omit in toc -->
-
-<!-- MarkdownTOC levels="1,2,3" -->
-
-- [Screenshots](#screenshots)
-- [Installation](#installation)
-- [Documentation](#documentation)
-- [Building](#building)
-- [Contributing](#contributing)
-- [License and Credits](#license-and-credits)
-
-<!-- /MarkdownTOC -->
-
-### Screenshots
-
-![](screenshots/screenshot2.png)
+![](screenshots/decks.jpg)
 
 ### Installation
 
