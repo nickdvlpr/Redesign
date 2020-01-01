@@ -2,15 +2,12 @@
 A new look for [Anki](https://apps.ankiweb.net/).
 
 
-<p align="center">
 <a title="Latest (pre-)release" href="https://github.com/glutanimate/speed-focus-mode/releases"><img src ="https://img.shields.io/github/release-pre/glutanimate/speed-focus-mode.svg?colorB=brightgreen"></a>
 <a title="License: GNU AGPLv3" href="https://github.com/glutanimate/speed-focus-mode/blob/master/LICENSE"><img  src="https://img.shields.io/badge/license-GNU AGPLv3-green.svg"></a>
 <a title="Rate on AnkiWeb" href="https://ankiweb.net/shared/info/1046608507"><img src="https://glutanimate.com/logos/ankiweb-rate.svg"></a>
 <br>
-<a title="Buy me a coffee :)" href="https://ko-fi.com/X8X0L4YV"><img src="https://img.shields.io/badge/ko--fi-contribute-%23579ebd.svg"></a>
-<a title="Support me on Patreon :D" href="https://www.patreon.com/developernick"><img src="https://img.shields.io/badge/patreon-support-%23f96854.svg"></a>
-<a title="Follow me on Twitter" href="https://twitter.com/nickdvlpr"><img src="https://img.shields.io/twitter/follow/glutanimate.svg"></a>
-</p>
+<a title="Support me on Patreon :)" href="https://www.patreon.com/developernick"><img src="https://img.shields.io/badge/patreon-support-%23f96854.svg"></a>
+<a title="Follow me on Twitter" href="https://twitter.com/nickdvlpr"></a>
 
 
 
