@@ -7,7 +7,7 @@ A new look for [Anki](https://apps.ankiweb.net/).
 <a title="License: GNU AGPLv3" href="https://github.com/nickdvlpr/Redesign/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-GNU%20AGPLv3-green"></a>
 
 
-![](screenshots/decks.jpg)
+![](screenshots/card3.png)
 
 <br>
 
