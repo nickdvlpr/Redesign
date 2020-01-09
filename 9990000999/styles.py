@@ -4,6 +4,7 @@ from .internals import css, snake_case, SingletonMetaclass, RequiringMixin
 
 
 
+primary = "#2196f3" # only used temporarily for two lines of code I could not figure out right now. color_p has replaced this and will replace it in future versions.
 customFont = "default"; # Set your desired font here.
 # Format is "Font Name With Spaces" (i.e. customFont="Times New Roman";)
 # Note: If you want to change this, you need to do so in three files: _init_.py, styles.py, and stylers.py
@@ -39,14 +40,14 @@ class SharedStyles(Style):
     @css
     def top(self):
         return """
-        
-        
+
+
         /* Note: This is Main screen, top bar, background color of full width (farthest back depth-wise) */
         body, #header{
         background-color:""" + self.config.color_b + """;
         height:60px;
         }
-        
+
         /* Note: This is Main screen, top bar, curved card */
         curvedcard, #header{
         background-color:#eeeeee;
@@ -57,26 +58,26 @@ class SharedStyles(Style):
         align: center;
         height: 35px;
         }
-        
-        
+
+
         /* Note: This is Main screen, top bar, text color of buttons (color) and background color of buttons (background-color). background-color should be same as in curvedcard */
         .hitem{
         background-color: #eee;
         color:#888;
-        font-family:%s;
+        font-family:""" + customFont + """;
         font-weight:normal;
         padding: 0px 12px 0px 12px;
         transition: color .2s;
         }
         .hitem:hover{
         text-decoration: none;
-        color:#2196f3;
+        color:""" + self.config.color_p + """;
         }
-        """ %(customFont)
+        """
 
-    
-    
-    
+
+
+
     @css
     def menu(self):
         return """
@@ -110,9 +111,9 @@ class SharedStyles(Style):
         }
         """
 
-    
-    
-    
+
+
+
     @css
     def colors(self):
         return f'color: {self.config.color_t}; background-color: {self.config.color_b};'
@@ -133,7 +134,7 @@ class SharedStyles(Style):
         {
             color:#ff7043!important
         }
-        
+
         /* this color in particular is the blue for New cards remaining, seen once you click a deck and right before you start studying */
         font[color="#00a"]
         {
@@ -168,10 +169,10 @@ class ButtonsStyle(Style):
         padding: 8px 16px 8px 16px;
         transition: color .2s, background-color .2s, border-color .2s, padding .4s;
     """
-    hover = 'background-color: #2196f3; color: #fff; border-color: #2196f3; padding: 8px 20px 8px 20px;'
+    hover = 'background-color:%s; color: #fff; border-color:%s; padding: 8px 20px 8px 20px;' %(primary, primary)
     active = 'color: #fff;'
 
-    
+
     @css
     def qt(self):
         return self.advanced_qt() + (self.qt_scrollbars if self.config.style_scroll_bars else '')
@@ -189,14 +190,18 @@ class ButtonsStyle(Style):
         """ + restrict_to_parent + """ QPushButton""" + restrict_to + """:hover
         {
             """ + self.hover + """
-                background-color: #2196f3;
+                background-color:"""+ self.config.color_p +""";
         }
-        """ + restrict_to_parent + """ QPushButton""" + restrict_to + """:pressed
+        """
+
+        + restrict_to_parent + """ QPushButton""" + restrict_to + """:pressed
         {
             """ + self.active + """
-                background-color: #2196f3;
+                background-color:"""+ self.config.color_p +""";
         }
-        """ + restrict_to_parent + """ QPushButton""" + restrict_to + """:disabled
+        """
+
+        + restrict_to_parent + """ QPushButton""" + restrict_to + """:disabled
         {
             """ + self.active + """
                 background-color: #bdbdbd;
@@ -287,12 +292,13 @@ class ButtonsStyle(Style):
         button:hover
         {{
             { self.hover }
-            background-color: #2196f3);
+            background-color:{self.config.color_p};
+            border-color:{self.config.color_p};
         }}
         button:active
         {{
             { self.active }
-            background: #2196f3;
+            background:{self.config.color_p};
         }}
             """ % (customFont)
 
@@ -300,7 +306,7 @@ class ButtonsStyle(Style):
     # + (self.scrollbars if self.config.style_scroll_bars else '')
 
 
-    
+
     # Button style for Editor portion (bottom half) of Browse window. This style surrounds the bold, italics, etc. buttons.
     @css
     def editorButtons(self):
@@ -353,7 +359,7 @@ class DeckStyle(Style):
             color:#0099CC;
             font-family:""" + customFont + """;
         }
-        
+
         a.deck {
             text-transform: none;
             font-size: 15px;
@@ -367,14 +373,14 @@ class DeckStyle(Style):
         a.deck:hover {
             text-decoration: none;
             color:#fff;
-            background-color:#2196f3;
+            background-color:""" + self.config.color_p + """;
             border-radius: 50px;
-            border-color: #2196f3;
+            border-color:""" + self.config.color_p + """;
             width: auto;
             height: auto;
             padding:6px 16px 6px 16px;
         }
-        
+
         tr.deck td{
             height:35px;
             border-bottom-color:""" + self.config.color_b + """;
@@ -393,16 +399,16 @@ class DeckStyle(Style):
             height:35px;
             font-family:""" + customFont + """;
         }
-        
+
         /* the plus or minus sign for collapsing decks */
         .collapse{
             color:#212121;
             font-family:""" + customFont + """;
             padding-right: 8px;
         }
-        
-        
-        
+
+
+
         /* text at top saying Deck, Due, and New, this does the font family */
         /* Note: changes here also affect the deck names text too, so you have to add the same properties to a.deck (above) */
         tr {
@@ -411,8 +417,8 @@ class DeckStyle(Style):
             text-transform: uppercase;
             font-size: 13px;
         }
-        
-        
+
+
         .decktd {
             text-decoration: none;
             border-radius: 50px;
@@ -424,14 +430,14 @@ class DeckStyle(Style):
             background-color:""" + self.config.color_b + """;
             border-radius: 50px;
         }
-        
+
         .filtered{
             color:#00AAEE!important
             font-family:""" + customFont + """;
         }
-        
 
-    
+
+
         .gears{
             padding-left:32px;
             padding-right:16px;
@@ -439,7 +445,7 @@ class DeckStyle(Style):
             height: 1em;
             opacity: .5;
         }
-    
+
         """
 
 

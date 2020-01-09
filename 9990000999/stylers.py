@@ -140,23 +140,23 @@ class ReviewerStyler(Styler):
     def _bottomHTML(self, reviewer, _old):
         return _old(reviewer) + style_tag(percent_escaped(self.bottom_css))
 
-    
-    
+
+
     @property
     def bottom_css(self):
         return self.buttons.html + self.shared.colors_replacer + """
-        
+
         /* Note: This is the reviewer screen, bottom bar, background color */
         body, #outer{
         background-color:""" + self.config.color_b + """;
         border-top-color:""" + self.config.color_b + """;
         }
-        
+
         /* Note: This is the reviewer screen, bottom bar, text color of the plus signs */
         .stattxt{
             color:#bdbdbd;
         }
-        
+
         /* Note: This is the reviewer screen, bottom bar, text color of text (time until next review) located above Again, Hard, Easy, etc. buttons */
         .nobold{
             color:#888;
@@ -217,13 +217,13 @@ class ReviewerCards(Styler):
         img#star{
             -webkit-filter:invert(0%)!important
         }
-        
+
         # This is the answer text color for cloze cards.
         # Good red color: #ef5350
         .cloze{
-            color:#2196f3!important
+            color:"""+ self.config.color_p +"""!important
         }
-        
+
         a{
             color:#0099CC
         }
@@ -461,53 +461,69 @@ class BrowserStyler(Styler):
             ''
         )
 
-    
-    
-    
-    # Browse styles: 1st is table of cards that can be selected, 2nd is the header of the table with each column header, 3rd is the search bar followed by more parts of the search bar.
+
+
+
+    # Browse styles:
+    # 1st (QTableView) is table of cards that can be selected.
+    # 2nd (QHeaderView) is the header of the table with each column header.
     @css
     def table(self):
         return f"""
             QTableView
             {{
-                margin:0 30px 30px 30px;
+                margin:0px 0px 0px 0px;
                 border-radius:10px;
-                border:1px solid #bdbdbd;
+                border:0px solid #eee;
                 selection-color:#fff;
                 alternate-background-color:#f8f8f8;
-                gridline-color:#eee;
+                gridline-color:#fff;
                 {self.shared.colors};
-                selection-background-color:#2196f3;
+                selection-background-color:{self.config.color_p};
                 font-family:%s;
             }}
             """ % (customFont)
 
+    # Background of header behind header text background = QHeaderView; the "color:" is for the currently sorted header's arrow
+    # Header text and its background = QHeaderView::section
     @css
     def table_header(self):
         return """
-            QHeaderView, QHeaderView::section
+            QHeaderView
+            {
+                background-color:#eee;
+                border-radius:15px;
+                color:"""+ self.config.color_p +""";
+            }
+
+            QHeaderView::section
             {
                 """ + self.shared.colors + """
                         height:32px;
-                        background-color:#fff;
-                        border-radius:10px;
+                        background-color:#eee;
+                        border-radius:15px;
                         font-family:%s;
                         font-size:14px;
-                        padding-top:8px;
-                        padding-bottom:8px;
+                        color:#888;
             }
             """ % (customFont)
 
+
+
+
+    # Search bar = QComboBox
+    # Search icon = QComboBox::down-arrow
     @css
     def search_box(self):
         return """
-            
+
         QComboBox
         {
-            margin:30px 0px 30px 0px;
-            border:1px solid #bdbdbd;
-            background-color:#eeeeee;
-            border-radius:20px;
+            margin:10px 0px 10px 0px;
+            border:0px solid #bdbdbd;
+            font-size:14px;
+            font-family: Product Sans;
+            border-radius:10px;
             padding:10px 10px 10px 10px;
             """ + self.shared.colors + """
         }
@@ -765,7 +781,7 @@ class CardLayoutStyler(Styler):
 
 
 
-    
+
     # Note: QTextEdit is used for the card code editor squares. Seen when you go to Browse, then click Cards button to edit a card, and then on the left side
     @css
     def qt_style(self):
@@ -803,12 +819,12 @@ class EditorWebViewStyler(Styler):
 
             custom_css = f"""
                 #topbuts {self.buttons.editorButtons};
-                
+
             #topbutsright button{{
                 padding: inherit;
                 margin-left: 1px;
             }}
-            
+
             #topbuts img{{
                 width:10px;
                 height:10px;
@@ -817,11 +833,11 @@ class EditorWebViewStyler(Styler):
                 -webkit-filter: invert(1)
                 */
             }}
-            
+
             a{{
                 background-color:#ff0000;
             }}
-            
+
             html, body, #topbuts, .field, .fname, #topbutsOuter{{
                 color: {self.config.color_t}!important;
                 background: {self.config.color_b}!important;

@@ -24,13 +24,13 @@ customFont = "default"; # Set your desired font here.
 #############################
 
 DeckBrowser._body = """
-    
-    
+
+
     <style>
         html,body,h1,h2,h3,h4,h5,h6 {font-family:""" + customFont + """}
     </style>
-    
-    
+
+
     <html>
     <head>
     <style>
@@ -48,8 +48,8 @@ DeckBrowser._body = """
     </style>
     </head>
     <body>
-    
-    
+
+
     <div class="grid-container">
     <div class="grid-item"></div>
     <div class="grid-item" style="height:100px; font-size:1.3em;"><h1>Anki</h1></div>
@@ -67,8 +67,8 @@ DeckBrowser._body = """
         %(countwarn)s</div>
     <div class="grid-item"></div>
     </div>
-    
-    
+
+
     </body>
     </html>
     """

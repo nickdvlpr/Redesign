@@ -155,6 +155,17 @@ class BackgroundColor(ColorAction):
 
 
 
+class PrimaryColor(ColorAction):
+    """
+    Open color picker and set chosen color to primary color (of buttons and more)
+    """
+    name = 'color_p'
+    value = '#2196f3'
+    label = 'Set &primary color'
+
+
+
+
 class AuxiliaryBackgroundColor(ColorAction):
     """
     Open color picker and set chosen color to auxiliary background (of content)
@@ -183,6 +194,7 @@ class ResetColors(MenuAction):
     label = '&Reset background and text colors'
 
     def action(self):
+        self.app.config.color_p.reset()
         self.app.config.color_b.reset()
         self.app.config.color_t.reset()
         self.app.refresh()
@@ -215,7 +227,7 @@ class StyleScrollBars(Setting, MenuAction):
     value = True
     label = 'Dark Scroll Bars'
     checkable = True
-    
+
     def action(self):
         self.value = not self.value
         self.app.refresh()
@@ -383,4 +395,3 @@ class DisabledStylers(Setting, MenuAction):
 
     def update(self):
         self.app.refresh(reload=True)
-
