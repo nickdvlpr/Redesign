@@ -52,8 +52,9 @@ class SharedStyles(Style):
         curvedcard, #header{
         background-color:#eeeeee;
         border-color:#eeeeee;
-        border-radius: 0px 0px 10px 10px;
+        border-radius: 10px 10px 10px 10px;
         border-width:2px;
+        margin-top: 10px;
         width: auto;
         align: center;
         height: 35px;
@@ -169,7 +170,7 @@ class ButtonsStyle(Style):
         padding: 8px 16px 8px 16px;
         transition: color .2s, background-color .2s, border-color .2s, padding .4s;
     """
-    hover = 'background-color:%s; color: #fff; border-color:%s; padding: 8px 20px 8px 20px;' %(primary, primary)
+    hover = 'background-color:#ff0000; color: #fff; border-color:#ff00ff; padding: 8px 20px 8px 20px;'
     active = 'color: #fff;'
 
 
@@ -185,12 +186,13 @@ class ButtonsStyle(Style):
         {
             background-color: #eee;
             border-radius:15px;
+            padding: 8px 16px 8px 16px;
             """ + self.idle + """
         }
         """ + restrict_to_parent + """ QPushButton""" + restrict_to + """:hover
         {
             """ + self.hover + """
-                background-color:"""+ self.config.color_p +""";
+                background-color:"""+ self.config.color_p +"""; padding: 8px 16px 8px 16px;
         }
         """
 
@@ -204,7 +206,7 @@ class ButtonsStyle(Style):
         + restrict_to_parent + """ QPushButton""" + restrict_to + """:disabled
         {
             """ + self.active + """
-                background-color: #bdbdbd;
+                background-color: #fafafa;
         }
         """ + restrict_to_parent + """ QPushButton""" + restrict_to + """:focus
         {
@@ -212,10 +214,15 @@ class ButtonsStyle(Style):
         }
         """
 
-    scrollbar_size = 15
-    scrollbar_background = '#313d45'
-    scrollbar_color = '#515d71'
 
+
+
+    # Scrollbar colors are only used if "Dark scrollbars" is enabled
+    scrollbar_size = 15
+    scrollbar_background = '{self.config.color_b}'
+    scrollbar_color = '#eeeeee'
+
+    # Scrollbar style for Browse window table and other dialogs
     @css
     def qt_scrollbars(self):
         return f"""
@@ -238,8 +245,8 @@ class ButtonsStyle(Style):
             height: {self.scrollbar_size}px;
         }}
         QScrollBar::handle {{
-            margin: 4px;
-            border-radius: 3px
+            margin: 4px 0 0 4px;
+            border-radius: 5px
         }}
         QScrollBar::handle:vertical {{
             min-height: 20px;
@@ -258,6 +265,7 @@ class ButtonsStyle(Style):
         }}
         """
 
+    # Scrollbar style for main Decks page
     @css
     def scrollbars(self):
         return f"""
@@ -272,7 +280,7 @@ class ButtonsStyle(Style):
         }}
         ::-webkit-scrollbar-thumb {{
             background: {self.scrollbar_color};
-            border-radius: 4px;
+            border-radius: 20px;
         }}
         """
 
@@ -300,10 +308,7 @@ class ButtonsStyle(Style):
             { self.active }
             background:{self.config.color_p};
         }}
-            """ % (customFont)
-
-    # The commented out code below used to immediately follow the """ above before the "% (customFont)" line was added. However, the customFont did not work with this so I simply commented out the line.
-    # + (self.scrollbars if self.config.style_scroll_bars else '')
+            """ %(customFont) + (self.scrollbars if self.config.style_scroll_bars else '')
 
 
 
@@ -312,16 +317,16 @@ class ButtonsStyle(Style):
     def editorButtons(self):
         return f"""
             button{{
-            { self.idle }
-            width:auto;
-            height:auto;
-            background:#eee;
-            border-color:#eee;
-            margin:2px;
-            padding: 4px 8px 4px 8px;
-            border-radius: 40px;
-            font-family:%s;
-            outline: none;
+                { self.idle }
+                width:auto;
+                height:auto;
+                background:#eee;
+                border-color:#eee;
+                margin:2px;
+                padding: 4px 8px 4px 8px;
+                border-radius: 40px;
+                font-family:%s;
+                outline: none;
             }}
             """ % (customFont)
 

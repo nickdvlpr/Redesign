@@ -225,7 +225,7 @@ class EnableInDialogs(Setting, MenuAction):
 
 class StyleScrollBars(Setting, MenuAction):
     value = True
-    label = 'Dark Scroll Bars'
+    label = 'Enable new scrollbars'
     checkable = True
 
     def action(self):

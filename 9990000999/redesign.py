@@ -5,14 +5,13 @@
 """
 
 
+Welcome to a brand new way of using Anki! This add-on redesigns Anki from the ground up and is based on the code from the Night Mode add-on (https://ankiweb.net/shared/info/1496166067). It was helpful in creating this redesign and I am very grateful to its author.
 
-    Welcome to a brand new way of using Anki! This add-on redesigns Anki from the ground up and is based on the code from the Night Mode add-on (https://ankiweb.net/shared/info/1496166067). It was helpful in creating this redesign and I am very grateful to its author.
-
-    Redesign adds a "View" option in the menu bar with options for switching it on and off and modifying select colors. After enabling the redesign, it changes the colors, animations, buttons, and main screens inside Anki.
-
+Redesign adds a "View" option in the menu bar with options for switching it on and off and modifying select colors. After enabling the redesign, it changes the colors, animations, buttons, and main screens inside Anki.
 
 
-    Acknowledgements:
+
+Acknowledgements:
     Special thanks to the Night Mode author, Krassowski, and the contributors to that code:
     - b50 (initial compatibility with 2.1),
     - ankitest (compatibility with 1508882486),
@@ -22,13 +21,13 @@
     - nathanmalloy
     - rathsky
 
-    Patreon Contributors:
+Patreon Contributors:
     (If you wish to have your name or username displayed here, please let me know.)
     - Basiskarten Jura (https://www.basiskarten.de/)
     - Others who wished to remain anonymous!
 
-    Copyright: Developer Nick (nickdeveloper.feedback@gmail.com)
-    License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html except when stated otherwise.
+Copyright: Developer Nick (nickdeveloper.feedback@gmail.com)
+License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html except when stated otherwise.
     """
 
 
@@ -52,7 +51,7 @@ from .stylers import Styler
 from .styles import Style, MessageBoxStyle
 
 __addon_name__ = 'Redesign'
-__version__ = '0.7'
+__version__ = '0.8'
 __anki_version__ = '2.1'
 
 
@@ -108,20 +107,20 @@ class Redesign:
     menu_layout = [
         EnableNightMode,
         EnableInDialogs,
-        '-',
-        InvertImage,
-        InvertLatex,
-        TransparentLatex,
+        StyleScrollBars,
         '-',
         PrimaryColor,
         BackgroundColor,
         TextColor,
         ResetColors,
         '-',
-        ModeSettings,
-        UserColorMap,
-        DisabledStylers,
-        StyleScrollBars,
+        #InvertImage,
+        #InvertLatex,
+        #TransparentLatex,
+        '-',
+        #ModeSettings,
+        #UserColorMap,
+        #DisabledStylers,
         '-',
         About
     ]

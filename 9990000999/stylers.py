@@ -782,18 +782,20 @@ class CardLayoutStyler(Styler):
 
 
 
-    # Note: QTextEdit is used for the card code editor squares. Seen when you go to Browse, then click Cards button to edit a card, and then on the left side
+    # Browse>Cards (editing dialog)
+    # Header text above each editor box = QGroupBox:title
+    # Card code editor squares (left side of dialog) = QTextEdit; Seen when you go to Browse, then click Cards button to edit a card, and then on the left side
     @css
     def qt_style(self):
         return f"""
         QGroupBox::title
         {{
-            {self.shared.colors}
+            {self.shared.colors};
         }}
         QTextEdit
         {{
             color: {self.config.color_t};
-            background-color:#eeeeee;
+            background-color:#eee;
             border-radius:10px;
         }}
         """
@@ -811,6 +813,7 @@ class EditorWebViewStyler(Styler):
     }
 
     # TODO: currently restart is required for this to take effect after configuration change
+    # @style_tag affects the bottom half of the Browse dialog
     @appends_in_night_mode
     @style_tag
     @percent_escaped
@@ -835,7 +838,7 @@ class EditorWebViewStyler(Styler):
             }}
 
             a{{
-                background-color:#ff0000;
+                background-color:#ffffff;
             }}
 
             html, body, #topbuts, .field, .fname, #topbutsOuter{{
