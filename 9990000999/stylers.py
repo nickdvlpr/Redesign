@@ -522,7 +522,7 @@ class BrowserStyler(Styler):
             margin:10px 0px 10px 0px;
             border:0px solid #bdbdbd;
             font-size:14px;
-            font-family: Product Sans;
+            font-family:"""+ customFont +""";
             border-radius:10px;
             padding:10px 10px 10px 10px;
             """ + self.shared.colors + """
