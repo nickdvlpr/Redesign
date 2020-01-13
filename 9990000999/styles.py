@@ -4,7 +4,6 @@ from .internals import css, snake_case, SingletonMetaclass, RequiringMixin
 
 
 
-primary = "#2196f3" # only used temporarily for two lines of code I could not figure out right now. color_p has replaced this and will replace it in future versions.
 customFont = "default"; # Set your desired font here.
 # Format is "Font Name With Spaces" (i.e. customFont="Times New Roman";)
 # Note: If you want to change this, you need to do so in three files: _init_.py, styles.py, and stylers.py
@@ -50,20 +49,21 @@ class SharedStyles(Style):
 
         /* Note: This is Main screen, top bar, curved card */
         curvedcard, #header{
-        background-color:#eeeeee;
-        border-color:#eeeeee;
-        border-radius: 10px 10px 10px 10px;
-        border-width:2px;
-        margin-top: 10px;
+        background-color:""" + self.config.color_b + """;
+        border-color:""" + self.config.color_b + """;
+        border-radius: 0 0 10px 10px;
+        margin-top: 0;
+        padding:0 10px 0 10px;
         width: auto;
         align: center;
         height: 35px;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
         }
 
 
         /* Note: This is Main screen, top bar, text color of buttons (color) and background color of buttons (background-color). background-color should be same as in curvedcard */
         .hitem{
-        background-color: #eee;
+        background-color:""" + self.config.color_b + """;
         color:#888;
         font-family:""" + customFont + """;
         font-weight:normal;
