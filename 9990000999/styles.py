@@ -291,7 +291,7 @@ class ButtonsStyle(Style):
         {{
             { self.idle }
             background:#eee;
-            border-color:#eee;
+            border:0px #eee;
             margin: 8px;
             border-radius: 40px;
             font-family:%s;
@@ -321,7 +321,7 @@ class ButtonsStyle(Style):
                 width:auto;
                 height:auto;
                 background:#eee;
-                border-color:#eee;
+                border:0px #eee;
                 margin:2px;
                 padding: 4px 8px 4px 8px;
                 border-radius: 40px;
