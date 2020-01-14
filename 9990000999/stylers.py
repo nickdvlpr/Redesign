@@ -150,6 +150,7 @@ class ReviewerStyler(Styler):
         body, #outer{
         background-color:""" + self.config.color_b + """;
         border-top-color:""" + self.config.color_b + """;
+        margin: 0 95px 0 95px;
         }
 
         /* Note: This is the reviewer screen, bottom bar, text color of the plus signs */

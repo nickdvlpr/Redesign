@@ -109,7 +109,7 @@ class Redesign:
         EnableInDialogs,
         StyleScrollBars,
         '-',
-        PrimaryColor,
+        #PrimaryColor,
         BackgroundColor,
         TextColor,
         ResetColors,

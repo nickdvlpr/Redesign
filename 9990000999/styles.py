@@ -44,7 +44,7 @@ class SharedStyles(Style):
         /* Note: This is Main screen, top bar, background color of full width (farthest back depth-wise) */
         body, #header{
         background-color:""" + self.config.color_b + """;
-        height:60px;
+        height:40px;
         }
 
         /* Note: This is Main screen, top bar, curved card */

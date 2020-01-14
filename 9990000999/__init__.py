@@ -37,7 +37,6 @@ DeckBrowser._body = """
     .grid-container {
         margin-left:auto;
         margin-right:auto;
-        width: 600px;
         display: grid;
         grid-template-columns: auto auto auto;
     }
@@ -52,13 +51,14 @@ DeckBrowser._body = """
 
     <div class="grid-container">
     <div class="grid-item"></div>
-    <div class="grid-item" style="height:100px; font-size:1.3em;"><h1>Anki</h1></div>
+    <center><div class="grid-item" style="width:440px; height:100px; font-size:1.3em;"><h1>Anki</h1></div></center>
     <div class="grid-item"></div>
     <div class="grid-item"></div>
-    <div class="grid-item">
+    <center><div class="grid-item" style="width:440px;">
         <table cellspacing=0 cellpading=3>
             %(tree)s
-        </table></div>
+        </table>
+    </div></center>
     <div class="grid-item"></div>
     <div class="grid-item"></div>
     <div class="grid-item" style="color:#bdbdbd; text-align:center">
