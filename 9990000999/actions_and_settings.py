@@ -149,8 +149,19 @@ class BackgroundColor(ColorAction):
     Open color picker and set chosen color to background (of main window content)
     """
     name = 'color_b'
-    value = '#ffffff'
+    value = '#fafafa'
     label = 'Set &background color'
+
+
+
+
+class CardColor(ColorAction):
+    """
+    Open color picker and set chosen color to background (of content)
+    """
+    name = 'color_c'
+    value = '#ffffff'
+    label = 'Set &card color'
 
 
 
@@ -196,6 +207,7 @@ class ResetColors(MenuAction):
     def action(self):
         self.app.config.color_p.reset()
         self.app.config.color_b.reset()
+        self.app.config.color_c.reset()
         self.app.config.color_t.reset()
         self.app.refresh()
 

@@ -49,8 +49,8 @@ class SharedStyles(Style):
 
         /* Note: This is Main screen, top bar, curved card */
         curvedcard, #header{
-        background-color:""" + self.config.color_b + """;
-        border-color:""" + self.config.color_b + """;
+        background-color:"""+ self.config.color_c +""";
+        border-color:"""+ self.config.color_c +""";
         border-radius: 0 0 10px 10px;
         margin-top: 0;
         padding:0 10px 0 10px;
@@ -63,7 +63,7 @@ class SharedStyles(Style):
 
         /* Note: This is Main screen, top bar, text color of buttons (color) and background color of buttons (background-color). background-color should be same as in curvedcard */
         .hitem{
-        background-color:""" + self.config.color_b + """;
+        background-color:""" + self.config.color_c + """;
         color:#888;
         font-family:""" + customFont + """;
         font-weight:normal;
@@ -184,7 +184,7 @@ class ButtonsStyle(Style):
         return """
         """ + restrict_to_parent + """ QPushButton""" + restrict_to + """
         {
-            background-color: #eee;
+            background-color: """+ self.config.color_c +""";
             border-radius:15px;
             padding: 8px 16px 8px 16px;
             """ + self.idle + """
@@ -290,12 +290,13 @@ class ButtonsStyle(Style):
         button
         {{
             { self.idle }
-            background:#eee;
-            border:0px #eee;
+            background:{self.config.color_c};
+            border:0px {self.config.color_c};
             margin: 8px;
             border-radius: 40px;
             font-family:%s;
             outline: none;
+            box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
         }}
         button:hover
         {{
@@ -320,8 +321,8 @@ class ButtonsStyle(Style):
                 { self.idle }
                 width:auto;
                 height:auto;
-                background:#eee;
-                border:0px #eee;
+                background:{self.config.color_c};
+                border:0px {self.config.color_c};
                 margin:2px;
                 padding: 4px 8px 4px 8px;
                 border-radius: 40px;

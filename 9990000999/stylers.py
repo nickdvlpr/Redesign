@@ -191,7 +191,7 @@ class ReviewerCards(Styler):
         {
             background-color:black!important;
             border-color:#444!important;
-            color:#eee!important
+            color:"""+ self.config.color_c +"""!important
         }
         .card input::selection{
             color: """ + self.config.color_t + """;
@@ -402,7 +402,7 @@ class BrowserStyler(Styler):
             icon = item.icon(0)
             pixmap = icon.pixmap(32, 32)
             image = pixmap.toImage()
-            image.invertPixels()
+            #image.invertPixels()
             new_icon = aqt.QIcon(QPixmap.fromImage(image))
             item.setIcon(0, new_icon)
 
@@ -440,12 +440,13 @@ class BrowserStyler(Styler):
         }
         QTreeView::item:selected:active, QTreeView::branch:selected:active
         {
-            color: """ + self.config.color_t + """;
+            color:#fff;
                 background-color:"""+ self.config.color_p +""";
         }
+        /* SELECTED BUT NOT ACTIVE, SO TEXT IS FADED; HAPPENS WHEN YOU SELECT ITEM THEN CLICK AWAY */
         QTreeView::item:selected:!active, QTreeView::branch:selected:!active
         {
-            color: """ + self.config.color_t + """;
+            color: rgba(255, 255, 255, 0.8);
                 background-color:"""+ self.config.color_p +""";
         }
         """ + (
@@ -477,10 +478,10 @@ class BrowserStyler(Styler):
             {{
                 margin:0px 0px 0px 0px;
                 border-radius:10px;
-                border:0px solid #eee;
+                border:0px solid {self.config.color_c};
                 selection-color:#fff;
                 alternate-background-color:#f8f8f8;
-                gridline-color:#fff;
+                gridline-color:{self.config.color_c};
                 {self.shared.colors};
                 selection-background-color:{self.config.color_p};
                 font-family:%s;
@@ -494,7 +495,7 @@ class BrowserStyler(Styler):
         return """
             QHeaderView
             {
-                background-color:#eee;
+                background-color:"""+ self.config.color_c +""";
                 border-radius:15px;
                 color:"""+ self.config.color_p +""";
             }
@@ -503,7 +504,7 @@ class BrowserStyler(Styler):
             {
                 """ + self.shared.colors + """
                         height:32px;
-                        background-color:#eee;
+                        background-color:"""+ self.config.color_c +""";
                         border-radius:15px;
                         font-family:%s;
                         font-size:14px;
@@ -533,7 +534,7 @@ class BrowserStyler(Styler):
 
         QComboBox:!editable
         {
-        background:#eeeeee;
+        background:"""+ self.config.color_c +""";
         }
 
         QComboBox QAbstractItemView
@@ -541,7 +542,7 @@ class BrowserStyler(Styler):
             border:0px solid #bdbdbd;
             border-radius:10px 10px 10px 10px;
             """ + self.shared.colors + """
-            background:#fff
+            background:"""+ self.config.color_c +""";
         }
 
         QComboBox::drop-down, QComboBox::drop-down:editable
@@ -777,12 +778,17 @@ class EditorStyler(Styler):
     def encode_class_name(string):
         return "ID"+"".join(map(str, map(ord, string)))
 
+    # Tags background box on bottom of Editor screen
     @css
     def completer(self):
         return """
-            background-color:black;
-            border-color:#444;
-            color:#eee;
+            background-color:"""+ self.config.color_c +""";
+            border:1px solid #bdbdbd;
+            border-radius:8px;
+            height:auto;
+            padding:4px;
+            color:"""+ self.config.color_t +""";
+            font-family:"""+ customFont +""";
         """
 
     @css
@@ -824,7 +830,7 @@ class CardLayoutStyler(Styler):
         QTextEdit
         {{
             color: {self.config.color_t};
-            background-color:#eee;
+            background-color:{self.config.color_c};
             border-radius:10px;
         }}
         """
@@ -867,7 +873,7 @@ class EditorWebViewStyler(Styler):
             }}
 
             a{{
-                background-color:#ffffff;
+                background-color:{self.config.color_c};
             }}
 
             html, body, #topbuts, .field, .fname, #topbutsOuter{{
