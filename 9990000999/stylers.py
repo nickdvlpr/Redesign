@@ -779,10 +779,11 @@ class EditorStyler(Styler):
 
     @css
     def completer(self):
-        return """
-            background-color:black;
-            border-color:#444;
-            color:#eee;
+        return f"""
+            border: 1px solid #444 !important;
+            color: {self.config.color_t};
+            border-radius: 5px !important;
+            background-color: {self.config.color_b} !important;
         """
 
     @css
@@ -874,6 +875,9 @@ class EditorWebViewStyler(Styler):
                 color: {self.config.color_t}!important;
                 background: {self.config.color_b}!important;
                 outline:none;
+            }}
+            .field {{
+                border-radius: 8px;
             }}
             """
 
