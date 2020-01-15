@@ -425,6 +425,8 @@ class BrowserStyler(Styler):
                 """)
         return rep, cs
 
+
+    # Sidebar of Browse dialog
     @css
     def style(self):
         return """
@@ -439,18 +441,18 @@ class BrowserStyler(Styler):
         QTreeView::item:selected:active, QTreeView::branch:selected:active
         {
             color: """ + self.config.color_t + """;
-                background-color:#ff0000;
+                background-color:"""+ self.config.color_p +""";
         }
         QTreeView::item:selected:!active, QTreeView::branch:selected:!active
         {
             color: """ + self.config.color_t + """;
-                background-color:#ffff00;
+                background-color:"""+ self.config.color_p +""";
         }
         """ + (
             """
             /* make the splitter light-dark (match all widgets as selecting with QSplitter does not work) */
             QWidget{
-                background-color:#fff;
+                background-color:"""+ self.config.color_b +""";
                 color: """ + self.config.color_t + """;
             }
             /* make sure that no other important widgets - like tags box - are light-dark */
@@ -558,6 +560,32 @@ class BrowserStyler(Styler):
             image: url('""" + self.app.icons.arrow + """')
         }
         """
+
+
+
+
+# Allows styling of sidebar in Browse dialog (necessary for Anki 2.1.17 and beyond)
+try:
+    from aqt.browser import SidebarModel
+
+    class SidebarModelStyler(Styler):
+
+        target = SidebarModel
+
+        @wraps(position='around')
+        def iconFromRef(self, sidebar_model, iconRef, _old):
+            icon = _old(sidebar_model, iconRef)
+            if icon:
+                pixmap = icon.pixmap(32, 32)
+                image = pixmap.toImage()
+                image.invertPixels()
+                new_icon = aqt.QIcon(QPixmap.fromImage(image))
+                return new_icon
+            return icon
+except ImportError:
+    pass
+
+
 
 
 class AddCardsStyler(Styler):
