@@ -13,7 +13,7 @@ A new look for [Anki](https://apps.ankiweb.net/).
 
 ### How to contribute
 
-(coming soon)
+Feel free to ask questions in the "Issues" tab or submit Pull requests if you have improvements or bug fixes!
 
 <br>
 
