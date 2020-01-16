@@ -3,7 +3,7 @@ from .internals import css, snake_case, SingletonMetaclass, RequiringMixin
 
 
 
-
+color_primary = '#2196f3'
 customFont = "default"; # Set your desired font here.
 # Format is "Font Name With Spaces" (i.e. customFont="Times New Roman";)
 # Note: If you want to change this, you need to do so in three files: _init_.py, styles.py, and stylers.py
@@ -38,6 +38,7 @@ class SharedStyles(Style):
 
     @css
     def top(self):
+
         return """
 
 
@@ -170,7 +171,7 @@ class ButtonsStyle(Style):
         padding: 8px 16px 8px 16px;
         transition: color .2s, background-color .2s, border-color .2s, padding .4s;
     """
-    hover = 'background-color:#ff0000; color: #fff; border-color:#ff00ff; padding: 8px 20px 8px 20px;'
+    hover = 'background-color:%s; color: #fff; border-color:%s; padding: 8px 20px 8px 20px;' %(color_primary, color_primary)
     active = 'color: #fff;'
 
 
@@ -186,6 +187,7 @@ class ButtonsStyle(Style):
         {
             background-color: """+ self.config.color_c +""";
             border-radius:15px;
+            border: 1px solid #bdbdbd;
             padding: 8px 16px 8px 16px;
             """ + self.idle + """
         }
@@ -206,7 +208,7 @@ class ButtonsStyle(Style):
         + restrict_to_parent + """ QPushButton""" + restrict_to + """:disabled
         {
             """ + self.active + """
-                background-color: #fafafa;
+                background-color:"""+ self.config.color_b +""";
         }
         """ + restrict_to_parent + """ QPushButton""" + restrict_to + """:focus
         {
@@ -322,7 +324,7 @@ class ButtonsStyle(Style):
                 width:auto;
                 height:auto;
                 background:{self.config.color_c};
-                border:0px {self.config.color_c};
+                border:1px solid #bdbdbd;
                 margin:2px;
                 padding: 4px 8px 4px 8px;
                 border-radius: 40px;

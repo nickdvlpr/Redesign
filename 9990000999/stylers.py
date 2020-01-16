@@ -430,12 +430,19 @@ class BrowserStyler(Styler):
     @css
     def style(self):
         return """
+
         QSplitter::handle
         {
             /* handled below as QWidget */
         }
-        #""" + from_utf8("widget") + """, QTreeView
+        #""" + from_utf8("widget") + """,
+
+        /* SIDEBAR SPECIFICALLY */
+        QTreeView
         {
+            margin:20px 0 20px 20px;
+            border:0px;
+            font-family:"""+ customFont +""";
             """ + self.shared.colors + """
         }
         QTreeView::item:selected:active, QTreeView::branch:selected:active
@@ -476,9 +483,9 @@ class BrowserStyler(Styler):
         return f"""
             QTableView
             {{
-                margin:0px 0px 0px 0px;
+                margin:10px 10px 20px 10px;
                 border-radius:10px;
-                border:0px solid {self.config.color_c};
+                border:1px solid #bdbdbd;
                 selection-color:#fff;
                 alternate-background-color:#f8f8f8;
                 gridline-color:{self.config.color_c};
@@ -495,8 +502,8 @@ class BrowserStyler(Styler):
         return """
             QHeaderView
             {
-                background-color:"""+ self.config.color_c +""";
-                border-radius:15px;
+                background-color:"""+ self.config.color_b +""";
+                border-radius:15px 15px 0px 0px;
                 color:"""+ self.config.color_p +""";
             }
 
@@ -504,7 +511,7 @@ class BrowserStyler(Styler):
             {
                 """ + self.shared.colors + """
                         height:32px;
-                        background-color:"""+ self.config.color_c +""";
+                        background-color:"""+ self.config.color_b +""";
                         border-radius:15px;
                         font-family:%s;
                         font-size:14px;
@@ -832,6 +839,7 @@ class CardLayoutStyler(Styler):
             color: {self.config.color_t};
             background-color:{self.config.color_c};
             border-radius:10px;
+            border:1px solid #bdbdbd;
         }}
         """
 
@@ -876,10 +884,28 @@ class EditorWebViewStyler(Styler):
                 background-color:{self.config.color_c};
             }}
 
-            html, body, #topbuts, .field, .fname, #topbutsOuter{{
+            html, .fname, #topbutsOuter{{
                 color: {self.config.color_t}!important;
                 background: {self.config.color_b}!important;
                 outline:none;
+            }}
+
+            #topbuts {{
+                background: {self.config.color_b};
+            }}
+
+            body {{
+                background:{self.config.color_b};
+                padding:10px 0 20px 0;
+            }}
+
+            .field {{
+                border:1px solid #bdbdbd;
+                border-radius:8px;
+                height:auto;
+                padding:4px;
+                color:"""+ self.config.color_t +""";
+                font-family:"""+ customFont +""";
             }}
             """
 
