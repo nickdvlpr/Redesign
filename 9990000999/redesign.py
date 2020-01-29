@@ -51,7 +51,7 @@ from .stylers import Styler
 from .styles import Style, MessageBoxStyle
 
 __addon_name__ = 'Redesign'
-__version__ = '1.0'
+__version__ = '1.1'
 __anki_version__ = '2.1'
 
 
