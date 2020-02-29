@@ -1,7 +1,34 @@
 from .redesign import Redesign
+from aqt import mw
+from anki.hooks import addHook
 from aqt.deckbrowser import DeckBrowser
 
-redesign = Redesign()
+#addons should selectively load before or after a delay of 666
+NM_RESERVED_DELAY = 100
+
+redesign = None
+
+def delayedLoader():
+    """
+        Delays loading of NM to avoid addon conflicts.
+    """
+    global redesign
+    from .redesign import Redesign
+    redesign = Redesign()
+    redesign.load()
+
+def onProfileLoaded():
+    if not redesign:
+        mw.progress.timer(
+            NM_RESERVED_DELAY, delayedLoader, False
+        )
+    else:
+        redesign.load()
+
+addHook('profileLoaded', onProfileLoaded)
+
+
+
 
 
 

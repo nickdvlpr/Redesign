@@ -35,7 +35,7 @@ License: GNU GPL, version 3 or later; http://www.gnu.org/copyleft/gpl.html excep
 
 import traceback
 
-from anki.hooks import addHook
+from anki.hooks import addHook, runHook
 from aqt import appVersion
 from aqt import mw
 
@@ -51,7 +51,7 @@ from .stylers import Styler
 from .styles import Style, MessageBoxStyle
 
 __addon_name__ = 'Redesign'
-__version__ = '1.1'
+__version__ = '1.2'
 __anki_version__ = '2.1'
 
 
@@ -142,10 +142,9 @@ class Redesign:
         )
 
         addHook('unloadProfile', self.save)
-        addHook('profileLoaded', self.load)
-
+        # Disabled, uses delay in __init__.py
+        # addHook('profileLoaded', self.load)
         addHook('prepareQA', self.night_class_injection)
-
         addHook('loadNote', self.background_bug_workaround)
 
     def load(self):
@@ -159,6 +158,9 @@ class Redesign:
         self.refresh()
         self.update_menu()
 
+        runHook("night_mode_config_loaded", self.config)
+
+
     def update_menu(self):
         self.menu.update_checkboxes(self.config.settings)
 
@@ -168,10 +170,12 @@ class Redesign:
     def on(self):
         """Turn on redesign."""
         self.styles.replace()
+        runHook("night_mode_state_changed", True)
 
     def off(self):
         """Turn off redesign."""
         self.styles.restore()
+        runHook("night_mode_state_changed", False)
 
     def refresh(self, reload=False):
         """

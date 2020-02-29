@@ -349,23 +349,6 @@ class AnkiWebViewStyler(Styler):
 
 
 
-class BrowserPackageStyler(Styler):
-
-    target = aqt.browser
-
-    # Note: This is Browse, highlight color of starred card in list
-    @replaces_in_night_mode
-    def COLOUR_MARKED(self):
-        return '#dedcfa'
-
-    # Note: This is Browse, highlight color of suspended card in list
-    @replaces_in_night_mode
-    def COLOUR_SUSPENDED(self):
-        return '#ededd5'
-
-
-
-
 class BrowserStyler(Styler):
 
     target = Browser
@@ -454,7 +437,9 @@ class BrowserStyler(Styler):
         QTreeView
         {
             margin:20px 0 20px 20px;
-            border:0px;
+            border: 0px solid #bdbdbd;
+            border-right: 1px solid #bdbdbd;
+            min-width:160px;
             font-family:"""+ customFont +""";
             """ + self.shared.colors + """
         }
@@ -547,7 +532,7 @@ class BrowserStyler(Styler):
             border:0px solid #bdbdbd;
             font-size:14px;
             font-family:"""+ customFont +""";
-            border-radius:10px;
+            border-radius:20px;
             padding:10px 10px 10px 10px;
             """ + self.shared.colors + """
         }
@@ -569,8 +554,8 @@ class BrowserStyler(Styler):
         {
             """ + self.shared.colors + """;
             margin-right:20px;
-            background:#fff;
-            border:0px solid #fff;
+            background:"""+ self.config.color_b +""";
+            border:0px solid """+ self.config.color_b +""";
             padding:10px 10px 10px 10px;
         }
 
