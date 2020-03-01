@@ -120,18 +120,22 @@ class TransparentLatex(Setting, MenuAction):
 
 
 
-class ColorAction(Setting, MenuAction):
 
+
+
+
+# COLORS
+# 3 Sections:
+# Section 1 is default colors with the names of the colors used throughout the addon (color_t, color_b, etc.).
+# Section 2 is light mode colors. "LightMode" can be selected in View menu by user to switch to these colors.
+# Section 3 is dark mode colors. "DarkMode" can be selected in View menu by user to switch to these colors.
+class ColorAction(Setting, MenuAction):
     def action(self):
         qt_color_old = QColor(self.value)
         qt_color = QColorDialog.getColor(qt_color_old)
-
         if qt_color.isValid():
             self.value = qt_color.name()
             self.app.refresh()
-
-
-
 
 class TextColor(ColorAction):
     """
@@ -141,9 +145,6 @@ class TextColor(ColorAction):
     value = '#000000'
     label = 'Set &text color'
 
-
-
-
 class BackgroundColor(ColorAction):
     """
     Open color picker and set chosen color to background (of main window content)
@@ -151,9 +152,6 @@ class BackgroundColor(ColorAction):
     name = 'color_b'
     value = '#fafafa'
     label = 'Set &background color'
-
-
-
 
 class CardColor(ColorAction):
     """
@@ -163,9 +161,6 @@ class CardColor(ColorAction):
     value = '#ffffff'
     label = 'Set &card color'
 
-
-
-
 class PrimaryColor(ColorAction):
     """
     Open color picker and set chosen color to primary color (of buttons and more)
@@ -174,9 +169,6 @@ class PrimaryColor(ColorAction):
     value = '#2196f3'
     label = 'Set &primary color'
 
-
-
-
 class AuxiliaryBackgroundColor(ColorAction):
     """
     Open color picker and set chosen color to auxiliary background (of content)
@@ -184,9 +176,6 @@ class AuxiliaryBackgroundColor(ColorAction):
     name = 'color_s'
     value = '#00ff00'
     label = 'Set &auxiliary background color'
-
-
-
 
 # TODO: include in menu
 class ActiveBackgroundColor(ColorAction):
@@ -200,16 +189,101 @@ class ActiveBackgroundColor(ColorAction):
 
 
 
-class ResetColors(MenuAction):
+
+
+
+
+# LIGHT MODE COLORS
+class TextColor(ColorAction):
+    name = 'color_t_light'
+    value = '#000000'
+    label = 'Set &text color'
+
+class BackgroundColor(ColorAction):
+    name = 'color_b_light'
+    value = '#fafafa'
+    label = 'Set &background color'
+
+class CardColor(ColorAction):
+    name = 'color_c_light'
+    value = '#ffffff'
+    label = 'Set &card color'
+
+class PrimaryColor(ColorAction):
+    name = 'color_p_light'
+    value = '#2196f3'
+    label = 'Set &primary color'
+
+class AuxiliaryBackgroundColor(ColorAction):
+    name = 'color_s_light'
+    value = '#00ff00'
+    label = 'Set &auxiliary background color'
+
+class ActiveBackgroundColor(ColorAction):
+    name = 'color_a_light'
+    value = '#2196f3'
+    label = 'Set active color'
+
+
+class LightColors(MenuAction):
     """Reset colors"""
-    label = '&Reset background and text colors'
+    label = '&Light mode'
 
     def action(self):
-        self.app.config.color_p.reset()
-        self.app.config.color_b.reset()
-        self.app.config.color_c.reset()
-        self.app.config.color_t.reset()
+        self.app.config.color_p = self.app.config.color_p_light
+        self.app.config.color_b = self.app.config.color_b_light
+        self.app.config.color_c = self.app.config.color_c_light
+        self.app.config.color_t = self.app.config.color_t_light
         self.app.refresh()
+
+
+
+
+
+# DARK MODE COLORS
+class TextColor(ColorAction):
+    name = 'color_t_dark'
+    value = 'rgba(255,255,255,0.7)'
+    label = 'Set &text color'
+
+class BackgroundColor(ColorAction):
+    name = 'color_b_dark'
+    value = '#312e42'
+    label = 'Set &background color'
+
+class CardColor(ColorAction):
+    name = 'color_c_dark'
+    value = '#44405a'
+    label = 'Set &card color'
+
+class PrimaryColor(ColorAction):
+    name = 'color_p_dark'
+    value = '#00b79f' # Blue: #2196f3, Red: #ef5350, Teal: #00b79f
+    label = 'Set &primary color'
+
+class AuxiliaryBackgroundColor(ColorAction):
+    name = 'color_s_dark'
+    value = '#00ffff'
+    label = 'Set &auxiliary background color'
+
+class ActiveBackgroundColor(ColorAction):
+    name = 'color_a_dark'
+    value = '#2196f3'
+    label = 'Set active color'
+
+class DarkColors(MenuAction):
+    label = '&Dark mode'
+
+    def action(self):
+        self.app.config.color_p = self.app.config.color_p_dark
+        self.app.config.color_b = self.app.config.color_b_dark
+        self.app.config.color_c = self.app.config.color_c_dark
+        self.app.config.color_t = self.app.config.color_t_dark
+        self.app.refresh()
+
+
+
+
 
 
 
