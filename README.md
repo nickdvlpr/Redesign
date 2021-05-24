@@ -1,5 +1,6 @@
 # Redesign
 A new look for [Anki](https://apps.ankiweb.net/).
+Created by Developer Nick.
 
 
 <a title="Rate on AnkiWeb" href="https://ankiweb.net/shared/info/1914733489"><img src="https://img.shields.io/badge/Anki%20Add--on-Rate-blue"></a> <a title="Sponsor me on GitHub!" href="https://github.com/nickdvlpr"><img src="https://img.shields.io/badge/GitHub-Sponsor-ff69b4"></a> <a title="Follow me on Twitter" href="https://twitter.com/nickdvlpr"><img src="https://img.shields.io/badge/Twitter-Follow-2aa9e0"></a>
