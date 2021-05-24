@@ -1,5 +1,6 @@
 # Redesign
-A new look for [Anki](https://apps.ankiweb.net/).
+A new look for [Anki](https://apps.ankiweb.net/). 
+
 Created by Developer Nick.
 
 
